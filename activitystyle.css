@@ -1,0 +1,215 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+/* 修改导航栏背景及渐变 */
+/* 修改导航栏背景及渐变 */
+header {
+    position: relative;
+    width: 100%;
+    min-height: 300px; /* 确保足够高度 */
+    background-image: url('Productbg.jpg'); /* 背景图片 */
+
+}
+
+header::before {
+    content: ''; /* 伪元素 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Productbg.jpg'); /* 替换为实际图片路径 */
+    background-size: cover; /* 确保图片按比例填充 */
+    background-position: center; /* 居中显示图片 */
+    z-index: -3; /* 放在最底层 */
+    border-image-repeat: no-repeat;
+}
+
+
+
+/* Logo 样式 */
+.logo img {
+    height: 50px; /* 调整高度 */
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    z-index: 2; /* 确保在伪元素和背景图片之上 */
+}
+
+/* 导航菜单 */
+nav ul {
+    display: flex;
+    justify-content: right; /* 菜单靠右对齐 */
+    align-items: center;
+    list-style: none;
+    padding: 55px 30px;
+    height: 100px; /* 渐变高度限制为 40px */
+    background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0)); /* 从黑色半透明到完全透明 */
+    z-index: -2; /* 渐变层在背景图片上方 */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white; /* 文字为白色 */
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease; /* 添加过渡效果 */
+}
+
+nav ul li a:hover {
+    color: #f0e68c; /* 鼠标悬停时颜色变化 */
+}
+
+/* 日期信息样式 */
+.date-info {
+    position: absolute;
+    top: 5px; /* 增加与导航菜单的垂直距离 */
+    right: 30px; /* 放在右上角 */
+    color: white; /* 文字颜色为白色 */
+    font-size: 14px; /* 字体大小较小 */
+    font-weight: normal; /* 设置字体为正常粗细 */
+    padding: 10px 25px;
+    z-index: 3; /* 确保显示在导航栏背景和其他内容之上 */
+}
+
+.date-info .spacing {
+    margin-left: 20px; /* 为“家园成立的第xx天”增加水平间距 */
+}
+.research-header {
+    text-align: center;
+    margin: 30px 0;
+    padding: 0 20px;
+}
+
+.research-header h1 {
+    font-size: 2.5rem;
+    color: #0073e6;
+    margin-bottom: 20px;
+}
+
+.research-header p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+
+
+
+
+
+.text-carousel {
+    position: relative;
+    width: 100%; /* 全宽 */
+    height: 50px; /* 滚动条高度 */
+    overflow: hidden;
+    background-color: #0073e6; /* 背景颜色 */
+    color: white; /* 文字颜色 */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* 靠左对齐 */
+}
+
+.text-carousel-track {
+    display: flex; /* 使用 Flexbox 布局 */
+    animation: scrollText 20s linear infinite; /* 设置滚动动画，持续20秒 */
+    width: max-content; /* 确保内容不会被强制压缩 */
+}
+
+.text-slide {
+    white-space: nowrap; /* 禁止文字换行 */
+    margin-right: 130px; /* 每条文字之间的间距 */
+    font-size: 20px; /* 调整文字大小 */
+    font-weight: bold;
+}
+
+/* 单方向滚动动画 */
+@keyframes scrollText {
+    0% {
+        transform: translateX(100%); /* 从右侧开始 */
+    }
+    100% {
+        transform: translateX(-100%); /* 滚动到左侧 */
+    }
+}
+
+
+
+/* 新闻详情页面样式 */
+.news-article {
+
+    margin: 20px 100px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+    font-family: Arial, sans-serif;
+}
+
+.news-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.news-meta {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.news-meta span {
+    display: inline-block;
+}
+
+.news-content p {
+    margin-bottom: 15px;
+    text-align: justify;
+    font-size: 16px;
+    color: #444;
+}
+
+.news-footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #999;
+    text-align: right;
+}
+
+.news-footer .editor {
+    font-style: italic;
+}
+
+.footer-line {
+    width: 100%;
+    height: 4px;
+    background-color: #0073e6; /* 蓝色 */
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0073e6;
+    color: white;
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>家园网</title>
+    <link rel="stylesheet" href="knowstyle.css">
+</head>
+<body>
+    <header>
+        
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="products.html">产品列表</a></li>
+                <li><a href="knowledge.html">知识库分享</a></li>
+                <li><a href="news.html">家园新闻</a></li>
+                <li><a href="activity.html">外链活动</a></li>
+                <li><a href="https://team.ncuos.com/join-us" target="_blank">加入我们</a></li>
+            </ul>
+        </nav>
+        <div class="date-info">
+            <span id="date-display"></span>
+        </div>
+        <div class="tab-navigation">
+            <button class="tab active" data-target="#intro">综合知识库</button>
+            <button class="tab" data-target="#history">后端站</button>
+            <button class="tab" data-target="#leaders">前端站</button>
+            <button class="tab" data-target="#past-leaders">设计站</button>
+            <button class="tab" data-target="#organization">产品站</button>
+
+        </div>
+    
+        <!-- 内容区 -->
+        <div class="tab-content-area">
+            <!-- 学校简介内容 -->
+            <div id="intro" class="tab-content active">
+                <div class="content-container">
+                    <!-- 左侧图片部分 -->
+                    <div class="image-section1">
+                        <img src="KNOWLEDGE/SHENRUQIANCHU.png" alt="INCU1">
+                    </div>
+                    <!-- 右侧文本部分 -->
+                    <div class="text-section1">
+                        <h1>深入浅出状态管理</h1>
+
+                        <h2>为什么讲状态管理</h2>
+                        <p>● 为什么产品经理/交互设计师要"懂"状态管理：解构用户行为模式————用状态机来分析用户在使用产品过程中的行为。
+                            比如在分析某打车 App 中，可以利用状态管理来分析，用户有未打车、等待打车、打到了车等状态，需要 PM 与交互设计师去归纳，
+                            并分析是哪些 Action 来触发这些状态 A 过渡到 B 的。PM 利用状态机的思想去分析用户使用产品时的各种动作。
+                        </p>
+                        
+                        <p>● 为什么开发要"学习"状态管理：处理复杂页面逻辑与业务流程。React 正是因为引入了状态管理的思想......
+                        </p>
+
+                        
+                        <a id="a1" href="https://ncuhome.yuque.com/ncuhome/nf1ac6/st9hwd" target="_blank">查看更多>>></a>                
+                    </div>
+                </div>
+            </div>
+            <div id="history" class="tab-content active">
+                <div class="content-container">
+                    <!-- 左侧图片部分 -->
+                    <div class="image-section1">
+                        <img src="KNOWLEDGE/MYSQL.jpg" alt="INCU1">
+                    </div>
+                    <!-- 右侧文本部分 -->
+                    <div class="text-section1">
+                        <h1>Mysql数据库备份</h1>
+
+                        <h2>1. InnoDB存储引擎简单介绍</h2>
+                        <p>
+                            InnoDB是事务型数据库的首选引擎，支持事务安全表（ACID），支持行锁定和外键。
+                            通过 <code>SHOW ENGINES;</code> 命令可以查看 MySQL 使用的存储引擎，其中 InnoDB 为默认使用引擎。
+                            目前只使用过这一种类型的数据库，故只介绍该数据库备份相关内容。
+                          </p>
+                          
+                          <p>
+                            备份是数据库管理中重要的一环，主要原因包括：
+                            ● 用于恢复或回滚：当发生了人为的数据库错误操作或者非人为的硬件故障、bug 致使数据损坏、服务器宕机等造成数据库不可用时，
+                            需要进行恢复或回滚到可用的数据库数据。
+                          </p>
+
+
+                        <a id="a1" href="https://ncuhome.yuque.com/ncuhome/nf1ac6/uiyin0#25f823f1" target="_blank">查看更多>>></a>                
+                    </div>
+                </div>
+            </div>
+            <div id="leaders" class="tab-content active">
+                <div class="content-container">
+                    <!-- 左侧图片部分 -->
+                    <div class="image-section1">
+                        <img src="KNOWLEDGE/REACT.png" alt="INCU1">
+                    </div>
+                    <!-- 右侧文本部分 -->
+                    <div class="text-section1">
+                        <h1>从零开始搭建REACT平台</h1>
+
+                        <h2>使用的技术栈</h2>
+                        <ul>
+                            <li><strong>Less</strong>: CSS 预处理器（知名的还有 Sass、Scss、Stylus 等）。</li>
+                            <li><strong>React</strong>: 构建用户界面的核心开发库。</li>
+                            <li><strong>TypeScript</strong>: 提供静态类型检查和开发阶段的诸多好处。</li>
+                            <li><strong>Webpack</strong>: 模块打包工具，用于管理和构建项目。</li>
+                            <li><strong>Webpack Dev Server</strong>: 开发用的本地服务器，提供热更新等功能。</li>
+                            <li><strong>React Router</strong>: 路由管理库，处理前端页面的导航。</li>
+                            <li><strong>Axios</strong>: 网络请求库，简化 HTTP 请求操作。</li>
+                      </ul>
+                        <a id="a1" href="https://ncuhome.yuque.com/ncuhome/nf1ac6/gs9gsa" target="_blank">查看更多>>></a>                
+                    </div>
+                </div>
+            </div>
+            <div id="past-leaders" class="tab-content active">
+                <div class="content-container">
+                    <!-- 左侧图片部分 -->
+                    <div class="image-section1">
+                        <img src="KNOWLEDGE/UI.png" alt="INCU1">
+                    </div>
+                    <!-- 右侧文本部分 -->
+                    <div class="text-section1">
+                        <h1>用户界面设计</h1>
+
+                        <h2>用户界面设计史</h2>
+                        <p>
+                            用户界面设计来源于近现代图形界面的发展，但是在图形界面的背后，却隐藏着许多人机交互
+                          知识。人机交互作为一门定义人与机器之间交互的学科，
+                            其必备的两个要素是输入和输出。人对机器的操作就是输入，
+                            而收音机上显示的当前频率就作为输出，给用户提供信息。而当我们旋转旋钮的时候，
+                            收音机的当前频率会随着旋钮的旋转而改变，我们称之为反馈。清晰明了的反馈是人机交互设计当中的关键，
+                            如果提供给用户的反馈足够清晰的话，用户就会觉得自己在操作一件真实的物件，从而对这样的过程而上瘾。
+                        </p>
+                        
+
+                        <a id="a1" href="https://ncuhome.yuque.com/ncuhome/nf1ac6/ui" target="_blank">查看更多>>></a>                
+                    </div>
+                </div>
+            </div>
+            <div id="organization" class="tab-content active">
+                <div class="content-container">
+                    <!-- 左侧图片部分 -->
+                    <div class="image-section1">
+                        <img src="KNOWLEDGE/CHANPINJINGLI.jpg" alt="INCU1">
+                    </div>
+                    <!-- 右侧文本部分 -->
+                    <div class="text-section1">
+                        <h1>产品经理概述</h1>
+                        <p>
+                            <strong>一、产品经理介绍</strong><br>
+                            顾名思义，产品经理由“产品”和“经理”两个词组成，意味着这个职业需要通过自己专业的技能及业务流程，
+                            以用户的需求为导向，输出有用户价值、商业价值的产品。那么什么是产品呢？“产品”一词在现代汉语词典当中的解释为“生产出来的物品”。
+                            具体来说，产品是指能够供给市场，被人们使用和消费，并能满足人们某种需求的任何东西，包括有形的物品、无形的服务、组织、观念或它们的组合。
+                            它的特点包括：供给市场、被使用消费、满足需求，表现形式可以是物品（例如矿泉水）、服务（例如物业服务）、
+                            组织（例如红十字会）和观念（例如社会主义价值观）等等。
+                          </p>
+
+                        <a id="a1" href="https://ncuhome.yuque.com/ncuhome/nf1ac6/wkqlao" target="_blank">查看更多>>></a>                
+                    </div>
+                </div>
+            </div>
+            
+
+
+
+        <button id="back-to-top" title="回到顶部">↑</button>
+        <footer>
+            <p>&copy; 2024 家园网</p>
+        </footer>
+        <script src="projs.js"></script>
+</html>

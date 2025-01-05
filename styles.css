@@ -1,0 +1,421 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+
+/* 修改导航栏背景及渐变 */
+header {
+
+    width: 100%;
+    height: 500px; /* 调整为合适高度 */
+    overflow: hidden; /* 避免内容溢出 */
+    background-image: var(--header-bg-image); /* 使用自定义属性动态设置背景图片 */
+    background-size: cover; /* 确保图片按比例填充 */
+    background-position: center; /* 居中显示图片 */
+    transition: background-image 0.5s ease-in-out; /* 平滑过渡效果 */
+}
+
+/* 添加背景图片 */
+header::before {
+    content: ''; /* 伪元素 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('20250103-221430.jpg'); /* 替换为实际图片路径 */
+    background-size: cover; /* 确保图片按比例填充 */
+    background-position: center; /* 居中显示图片 */
+    z-index: -3; /* 放在最底层 */
+}
+
+/* 渐变效果，限制到 40px */
+header::after {
+    content: ''; /* 使用伪元素 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+}
+
+/* Logo 样式 */
+.logo img {
+    height: 50px; /* 调整高度 */
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    z-index: 2; /* 确保在伪元素和背景图片之上 */
+}
+
+/* 导航菜单 */
+nav ul {
+    display: flex;
+    justify-content: right; /* 菜单居中 */
+    align-items: center;
+    list-style: none;
+    padding: 55px 30px;
+    height: 100px; /* 渐变高度限制为 40px */
+    background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0.055)); /* 从黑色半透明到完全透明 */
+    z-index: -2; /* 渐变层在背景图片上方 */
+
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white; /* 文字为白色 */
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease; /* 添加过渡效果 */
+}
+
+nav ul li a:hover {
+    color: #f0e68c; /* 鼠标悬停时颜色变化 */
+}
+
+
+
+
+/* Ensure carousel container has relative positioning */
+.carousel {
+    position: relative;  /* Make the carousel the reference for absolute positioning of buttons */
+    overflow: hidden;
+    width: 100%;
+    height: 130px; /* Adjust as necessary */
+    margin-top: 10px;
+    margin-bottom: -10px;
+    background-color: #f9f9f9;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-400%);  /* Vertically center the buttons */
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-btn.prev {
+    left: 10px;  /* Position the previous button on the left */
+}
+
+.carousel-btn.next {
+    right: 10px;  /* Position the next button on the right */
+}
+
+
+/* 日期信息样式 */
+/* 日期信息样式 */
+.date-info {
+    position: absolute;
+    top: 5px; /* 增加与导航菜单的垂直距离 */
+    right: 30px; /* 放在右上角 */
+    color: white; /* 文字颜色为白色 */
+    font-size: 14px; /* 字体大小较小 */
+    font-weight: normal; /* 设置字体为正常粗细 */
+    padding: 10px 25px;
+    z-index: 3; /* 确保显示在导航栏背景和其他内容之上 */
+}
+.date-info .spacing {
+    margin-left: 20px; /* 为“家园成立的第xx天”增加水平间距 */
+}
+
+.news {
+    padding: 10px 100PX;
+    background-color: white;
+}
+
+
+
+.module-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 每行显示两个模块 */
+    gap: 10px; /* 每个模块之间的水平和垂直间距 */
+    padding: 10px 0px; /* 整体内容的内边距 */
+}
+
+.module {
+    position: relative;
+    border-radius: 10px; /* 圆角 */
+    overflow: hidden; /* 确保子元素不会溢出 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+    transition: transform 0.3s, box-shadow 0.3s; /* 鼠标悬停动画 */
+}
+
+.module img {
+    width: 100%; /* 图片宽度自适应 */
+    height: auto; /* 高度按比例调整 */
+    display: block; /* 避免出现额外的空白 */
+}
+
+.module-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
+    color: white; /* 白色文字 */
+    padding: 10px 20px; /* 内边距 */
+    font-size: 16px; /* 调整字体大小 */
+    text-align: left; /* 文字靠左对齐 */
+    font-weight: bold; /* 字体加粗 */
+    box-sizing: border-box; /* 包括 padding 在内计算宽度 */
+}
+
+.module:hover {
+    transform: translateY(-5px); /* 鼠标悬停时上移 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* 鼠标悬停时加强阴影 */
+}
+
+
+
+
+
+
+/* Carousel 容器 */
+.carousel {
+    position: relative;
+    overflow: hidden; /* 隐藏溢出内容 */
+    width: 100%; /* 占满整行 */
+    height: 130px; /* 调整高度 */
+    margin-top: 10px;
+    margin-bottom: -10px;
+
+    background-color: #f9f9f9;
+}
+
+.carousel-container {
+    display: flex;
+    animation: scroll 20s linear infinite; /* 自动滚动动画 */
+
+}
+
+.carousel-item {
+    flex: 0 0 100px; /* 每个图片为固定宽高 */
+    overflow: hidden; /* 隐藏超出边界的部分 */
+    position: relative;
+    margin: 0 10px; /* 图片之间的间距 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px; /* 图片圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+    transition: transform 0.3s ease;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: -40px; /* 初始隐藏 */
+    left: 0;
+    width: 100%;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6); /* 黑色半透明背景 */
+    padding: 5px 0;
+    border-radius: 0 0 8px 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease, bottom 0.3s ease;
+}
+
+/* 鼠标悬停效果 */
+.carousel-item:hover {
+    transform: scale(1.2); /* 放大 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item:hover .carousel-caption {
+    opacity: 1; /* 显示文字 */
+    bottom: 0; /* 提升文字位置 */
+}
+
+/* 自动滚动动画 */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* 左移到一半宽度，刚好首尾相接 */
+    }
+}
+
+/* 鼠标悬停时暂停滚动 */
+.carousel:hover .carousel-container {
+    animation-play-state: paused;
+}
+
+/* 页边距和标题居中 */
+
+ h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0px;
+    text-align:center
+}
+.knowledge-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0px;
+    text-align:center;
+    padding: 0 0 10px; /* 上下内边距：上20px，下10px */
+
+  }
+  
+  /* 外层容器 */
+  .section-container {
+    display: flex;
+    width: 100%;
+    min-height: 300px; /* 设置最小高度 */
+  }
+  
+  /* 左侧导航栏样式 */
+  .sidebar {
+    width: 20%;
+    background-color: #f0f0f0;
+    padding: 10px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-item {
+    text-align: center;
+    padding: 15px 0;
+    font-size: 18px;
+    color: #007bff;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .menu-item.active {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .menu-item:hover {
+    background-color: #e0e0e0;
+  }
+
+/* 右侧内容区域样式 */
+.content {
+    width: 80%;
+    padding: 20px;
+    background-color: #fff;
+    display: flex; /* 使用flex布局，图片和文字水平排列 */
+    gap: 20px; /* 图片和文字之间的间隔 */
+  }
+  
+  .content-display {
+    display: flex; /* 让图片和文字并排排列 */
+    flex-direction: row; /* 图片和文字水平排列 */
+    align-items: flex-start; /* 确保图片和文字顶部对齐 */
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .content-display.hidden {
+    display: none;
+  }
+  
+  .content-image {
+    width: 40%; /* 图片占内容宽度的40% */
+    height: 276px; /* 高度自适应 */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* 防止图片被压缩 */
+  }
+  
+  .content-text {
+    flex: 1; /* 文字区域占据剩余宽度 */
+    display: flex; /* 文字部分垂直排列 */
+    flex-direction: column; /* 让段落、列表和链接从上到下排列 */
+    gap: 10px; /* 每个文字块之间的间距 */
+    margin-left: 30px;
+  }
+  
+  .read-more {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+  }
+  
+  .read-more:hover {
+    text-decoration: underline;
+  }
+  
+
+/* 给 section 添加交替背景色 */
+main section:nth-child(odd) {
+    background-color: #e3e8f1; /* 淡灰色 */
+}
+
+main section:nth-child(even) {
+    background-color: #ffffff; /* 白色 */
+}
+
+/* 为每个 section 添加统一的内边距 */
+main section {
+    padding: 10px 100px 20px 100px;
+}
+
+
+/* 页脚蓝色线 */
+.footer-line {
+    width: 100%;
+    height: 4px;
+    background-color: #0073e6; /* 蓝色 */
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0073e6;
+    color: white;
+}
+
+p{
+    font-size: 16px;
+}
+h1{
+    font-size: 24px;
+
+}
+li{
+    font-size: 16px;
+}

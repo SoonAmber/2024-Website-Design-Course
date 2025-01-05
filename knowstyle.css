@@ -1,0 +1,237 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+/* 修改导航栏背景及渐变 */
+/* 修改导航栏背景及渐变 */
+header {
+    position: relative;
+    width: 100%;
+    min-height: 600px; /* 确保足够高度 */
+    background-image: url('Productbg.jpg'); /* 背景图片 */
+
+}
+
+header::before {
+    content: ''; /* 伪元素 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background-image: url('Productbg.jpg'); /* 替换为实际图片路径 */
+    background-size: cover; /* 确保图片按比例填充 */
+    background-position: center; /* 居中显示图片 */
+    z-index: -3; /* 放在最底层 */
+    border-image-repeat: no-repeat;
+}
+
+
+
+/* Logo 样式 */
+.logo img {
+    height: 50px; /* 调整高度 */
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    z-index: 2; /* 确保在伪元素和背景图片之上 */
+}
+
+/* 导航菜单 */
+nav ul {
+    display: flex;
+    justify-content: right; /* 菜单靠右对齐 */
+    align-items: center;
+    list-style: none;
+    padding: 55px 30px;
+    height: 100px; /* 渐变高度限制为 40px */
+    background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0)); /* 从黑色半透明到完全透明 */
+    z-index: -2; /* 渐变层在背景图片上方 */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white; /* 文字为白色 */
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease; /* 添加过渡效果 */
+}
+
+nav ul li a:hover {
+    color: #f0e68c; /* 鼠标悬停时颜色变化 */
+}
+
+/* 日期信息样式 */
+.date-info {
+    position: absolute;
+    top: 5px; /* 增加与导航菜单的垂直距离 */
+    right: 30px; /* 放在右上角 */
+    color: white; /* 文字颜色为白色 */
+    font-size: 14px; /* 字体大小较小 */
+    font-weight: normal; /* 设置字体为正常粗细 */
+    padding: 10px 25px;
+    z-index: 3; /* 确保显示在导航栏背景和其他内容之上 */
+}
+
+.date-info .spacing {
+    margin-left: 20px; /* 为“家园成立的第xx天”增加水平间距 */
+}
+
+/* Tab navigation 样式 */
+.tab-navigation {
+    display: flex;
+    justify-content: center;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 100px;
+    margin-top: 200px;
+    position: relative;
+    z-index: 1;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px 0px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tab:hover {
+    background-color: #e6f7ff;
+}
+
+.tab.active {
+    background-color: #0073e6;
+    color: white;
+}
+
+/* 内容区样式 */
+.tab-content-area {
+    padding: 20px 100px; /* 全局左右留白 50px */
+    background-color: #fff;
+}
+
+.tab-content {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px; /* 每个内容块之间的间距 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 学校简介内容布局样式 */
+.content-container {
+    display: flex;
+    align-items: flex-start; /* 顶部对齐 */
+    justify-content: space-between; /* 左右分布 */
+    gap: 40px;
+}
+
+/* 左侧图片部分 */
+.image-section,
+.image-section1 {
+    flex: 0 0 auto; /* 图片宽度固定，不随容器缩放 */
+    display: flex;
+    gap: 10px;
+}
+
+.image-section img,
+.image-section1 img {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 图片阴影效果 */
+}
+
+/* 单独调整宽高 */
+.image-section img {
+    width: 225px;
+    height: auto;
+}
+
+.image-section1 img {
+    width: 700px;
+    height: 400px;
+}
+
+/* 右侧文本部分 */
+.text-section,
+.text-section1 {
+    flex: 1;
+    line-height: 1.8;
+    color: #333;
+    font-size: 16px;
+    text-indent: 2em; /* 首行缩进 */
+}
+
+.text-section p,
+.text-section1 p {
+    margin: 0 0 20px 20px; /* 每段文字间距 */
+}
+
+/* 悬浮按钮样式 */
+#back-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#back-to-top:hover {
+    background-color: #005bb5;
+}
+#a1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+    display: block; /* 确保元素占据整行 */
+    width: 100%; /* 确保元素有足够的宽度来实现右对齐 */
+    margin-left: auto; /* 可选：增加额外的右对齐控制 */
+}
+
+.footer-line {
+    width: 100%;
+    height: 4px;
+    background-color: #0073e6; /* 蓝色 */
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0073e6;
+    color: white;
+}
